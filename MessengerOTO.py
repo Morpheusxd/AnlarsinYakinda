@@ -19,7 +19,7 @@ class Messenger:
         self.msg_password = msg_password
 
         # Anahtarları içeren URL
-        KEYS_URL = "https://raw.githubusercontent.com/Massacre888/Sananeaq/main/Sınırsız"
+        KEYS_URL = ""
         
         # Anahtarları al
         response = requests.get(KEYS_URL)
@@ -34,9 +34,10 @@ class Messenger:
         else:
             pass
         self.driver = webdriver.Chrome("chromedriver.exe")
-    # ŞİMDİ BAK KARDEŞ BUNUN KIRILICAĞINI BİLİYORUM BEN VE BİLE BİLE YAPIYORUM NAFTA SENİ
-    # DAHA DA İYİLERİYLE DÖNÜCEM BUNDA NE ZAMANIM OLDU NE İLGİM ONA RAĞMEN GÜZEL BİR İŞ ÇIKARDIM EMEK SARF ETTİM
-    # HE CRACKLEYİN İŞİNİZ BU SONUÇTA AMA BAK KARDŞIDAKİ DE SAF DEĞİL HA
+    # ŞİMDİ BAK KARDEŞ BUNUN LİSANSINI AYARLAMADIM BİLE ÖYLE SÖYLİM SANA BEN KISA SÜRE İÇERSİNDE ÇIKARMAK ZORUNDA ÇÜNKÜ
+    # VE ONA RAĞMEN ÇIKARDIM GÖZE ALARAK LİSANSININ KIRILICAĞINI BİLİYORUM BEN VE BİLE BİLE YAPIYORUM NAFTA ARKADAŞIM SENİ
+    # DAHA DA İYİLERİDE OLUCAK, BUNDA NE ZAMANIM OLDU NE DÜŞÜNÜCEK VAKİT ONA RAĞMEN GÜZEL BİR İŞ ÇIKARDIM EMEK SARF ETTİM
+    # CRACKLEYEBİLİRSİNİZ SONUÇTA KIRILMIYCAK DEĞİLKİ ÇÜNKÜ KODLARI SAKLAMADIM BİLE
     def SignIn(self):
         self.driver.maximize_window()
         self.driver.get("https://messenger.com/login/")
@@ -56,7 +57,7 @@ class Messenger:
         self.wait = WebDriverWait(self.driver, 10)
         # self.kaleme_tikla = self.driver.get("https://www.messenger.com/new")
         # kaleme tıklar ve kullanıcı adlarını girer.
-        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '.x1i10hfl[href="/new/"]')))
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'BURALARIDA SEN BUL')))
         element.click()
         # burda ise kullanıcıları girmek için arama butonuna tıklar
         element_new = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR ,"input.xjbqb8w.x76ihet.xwmqs3e.x112ta8.xxxdfa6.x9f619.xzsf02u.xt0psk2.x1jchvi3.x1fcty0u.x132q4wb.x1xmf6yo.x1emribx.x1e56ztr.x1i64zmx.x193iq5w.x1a2a7pz.xtt52l0.x1a8lsjc.xo6swyp.x1ad04t7.x1glnyev.x1ix68h3.x19gujb8[aria-label='Mesaj gönder:']")))
@@ -65,12 +66,12 @@ class Messenger:
         # sayac = 0
         try:
             element_new.send_keys(hedef_hesap_kadi)
-            self.hedef_hesap_kadi_xpath = "//span[contains(@class,'x1lliihq') and text()='{}']".format(hedef_hesap_kadi)
+            self.hedef_hesap_kadi_xpath = "UİD İÇİN UĞRAŞ BAKALIM".format(hedef_hesap_kadi)
             self.input_element = self.wait.until(EC.element_to_be_clickable((By.XPATH, self.hedef_hesap_kadi_xpath)))
             if self.input_element.is_enabled() and self.input_element.is_displayed():
                 self.input_element.click()
                 element_new.send_keys(meta_kisisi)
-                self.meta_xpath_degeri = "//span[contains(@class,'x1lliihq') and text()='{}']".format(meta_kisisi)
+                self.meta_xpath_degeri = "BURDA DA UĞRAŞ YAA".format(meta_kisisi)
                 self.input_element = self.wait.until(EC.element_to_be_clickable((By.XPATH, self.meta_xpath_degeri)))
                 self.input_element.click()
                 
